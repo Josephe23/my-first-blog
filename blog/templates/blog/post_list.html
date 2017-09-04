@@ -8,6 +8,7 @@
     </div>
 
     {% for p in posts %}
+      <div>
         <p>Publicacion:{{ p.fecha_publicacion }}</p>
         <h1><a href="">{{ p.titulo }}</a></h1>
         <p>{{ p.texto|linebreaksbr }}</p>
