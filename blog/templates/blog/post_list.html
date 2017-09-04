@@ -7,8 +7,7 @@
       <h1><a href="/">Django Girls Blog</a></h1>
     </div>
 
-    {% for p in pub %}
-      <div>
+    {% for p in posts %}
         <p>Publicacion:{{ p.fecha_publicacion }}</p>
         <h1><a href="">{{ p.titulo }}</a></h1>
         <p>{{ p.texto|linebreaksbr }}</p>
