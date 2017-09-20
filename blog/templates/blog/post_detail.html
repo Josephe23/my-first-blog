@@ -2,15 +2,15 @@
 
 {% block content %}
   <div class="post">
-    {% if post.fecha_creacion %}
+    {% if posts.fecha_creacion %}
       <div class="date">
-        {{ post.fecha_creacion }}
+        {{ posts.fecha_creacion }}
       </div>
     {% endif %}
-    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+    <a class="btn btn-default" href="{% url 'post_edit' pk=posts.pk %}">
       <span class="glyphicon glyphicon-pencil"></span>
     </a>
-    <h1>{{ post.titulo }}</h1>
-    <p>{{ post.texto|linebreaksbr }}</p>
+    <h1>{{ posts.titulo }}</h1>
+    <p>{{ posts.texto|linebreaksbr }}</p>
   </div>
 {% endblock %}
