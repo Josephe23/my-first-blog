@@ -21,7 +21,7 @@ def post_new(request):
             posts.autor = request.user
             posts.fecha_creacion = timezone.now()
             posts.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post_detail', pk=posts.pk)
     else:
         form = PostForm()
         return render(request, 'blog/post_edit.html', {'form': form})
@@ -29,12 +29,12 @@ def post_new(request):
 def post_edit(request, pk):
     posts = get_object_or_404(Publicacion, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, instance=posts)
         if form.is_valid():
             posts = form.save(commit=False)
             posts.autor = request.user
             posts.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post_detail', pk=posts.pk)
     else:
         form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
