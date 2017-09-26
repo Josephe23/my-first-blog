@@ -12,7 +12,9 @@
     <a class="btn btn-default" href="{% url 'post_edit' pk=posts.pk %}">
       <span class="glyphicon glyphicon-pencil"></span>
     </a>
-    <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    <a class="btn btn-default" href="{% url 'post_remove' pk=posts.pk %}">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
     <h1>{{ posts.titulo }}</h1>
     <p>{{ posts.texto|linebreaksbr }}</p>
   </div>
