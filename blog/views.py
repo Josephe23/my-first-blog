@@ -43,8 +43,8 @@ def post_draft_list(request):
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
 def post_publish(request, pk):
-    posts = get_object_or_404(Publicacion, pk=pk)
-    posts.publish()
+    post = get_object_or_404(Publicacion, pk=pk)
+    post.publish()
     return redirect('post_detail', pk=pk)
 
 def post_remove(request, pk):
